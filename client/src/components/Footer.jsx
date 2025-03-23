@@ -4,9 +4,7 @@ const Footer = () => {
   return (
     <div>
       Footer
-      <P>change</P>
     </div>
   )
 }
-
 export default Footer
