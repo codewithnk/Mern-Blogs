@@ -3,6 +3,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -15,14 +16,7 @@ import { BiCategoryAlt } from "react-icons/bi";
 import { TbLogs } from "react-icons/tb";
 import { FaComments } from "react-icons/fa6";
 import { LiaUserSolid } from "react-icons/lia";
-
-const menuItems = [
-  { name: "Home", icon: <IoHomeOutline />, path: "/" },
-  { name: "Categories", icon: <BiCategoryAlt />, path: "/categories" },
-  { name: "Blogs", icon: <TbLogs />, path: "/blogs" },
-  { name: "Comments", icon: <FaComments />, path: "/comments" },
-  { name: "Users", icon: <LiaUserSolid />, path: "/users" },
-];
+import {GoDot} from "react-icons/go"
 
 const AppSidebar = () => {
   return (
@@ -33,18 +27,52 @@ const AppSidebar = () => {
       <SidebarContent className="bg-white">
         <SidebarGroup />
         <SidebarMenu>
-          {menuItems.map((item, index) => (
-            <SidebarMenuItem key={index}>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <IoHomeOutline />
+              <Link to="/">Home</Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <BiCategoryAlt />
+              <Link to="/categories">Categories</Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <TbLogs />
+              <Link to="/blogs">Blogs</Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <FaComments />
+              <Link to="/comments">Comments</Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton>
+              <LiaUserSolid />
+              <Link to="/users">Users</Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Categories</SidebarGroupLabel>
+          <SidebarMenu>
+            <SidebarMenuItem>
               <SidebarMenuButton>
-                {item.icon}
-                <Link to={item.path}>{item.name}</Link>
+                <GoDot/>
+                <Link to="">Catetory Item</Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
-        <SidebarGroup />
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarContent />
       </SidebarContent>
-      <SidebarFooter />
     </Sidebar>
   );
 };

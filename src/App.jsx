@@ -1,8 +1,10 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./Layout/Layout";
-import { RouteIndex } from "./helpers/RouteName";
+import { RouteIndex, RouteSignIn, RouteSignUp } from "./helpers/RouteName";
 import Index from "./Pages/Index";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
         <Route path={RouteIndex} element={<Layout/>}>
         <Route index element={<Index/>}/>
         </Route>
+        <Route path={RouteSignIn} element={<SignIn/>}/>
+        <Route path={RouteSignUp} element={<SignUp/>}/>
       </Routes>
     </BrowserRouter>
   );
