@@ -36,7 +36,7 @@ const SignIn = () => {
     <div className="flex justify-center items-center h-screen w-screen">
       <Card className="w-[400px] p-5">
         <h1 className="text-2xl font-bold text-center mb-5">
-          Login Into Account
+          {/* Login Into Account */}
         </h1>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
